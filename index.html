@@ -5,18 +5,35 @@
     <title>Respecular</title>
     <script src="http://localhost:9000/dist/aframe.js"></script>
     <script src="assets/components/json-model.js"></script>
+    <script src="assets/components/mirror-camera.js"></script>
+    <script src="assets/components/mirror/Mirror.js"></script>
+    <script src="assets/components/mirror/component.js"></script>
     <script src="assets/shaders/skin-material/ShaderSkin.js"></script>
     <script src="assets/shaders/skin-material/skin.js"></script>
   </head>
   <body>
-    <a-scene stats>
+    <a-scene>
       <a-assets>
         <a-asset-item id="leeperrysmith-json"
                       src="assets/models/leeperrysmith/LeePerrySmith.js"></a-asset-item>
       </a-assets>
 
       <a-entity json-model="#leeperrysmith-json"
-                material="shader: skin"></a-obj-model>
+                material="shader: skin"
+                mirror-camera></a-entity>
+
+      <a-entity json-model="#leeperrysmith-json"
+                material="shader: skin"
+                mirror-camera
+                position="-10 0 3"></a-entity>
+
+      <a-entity json-model="#leeperrysmith-json"
+                material="shader: skin"
+                mirror-camera
+                position="10 0 3"></a-entity>
+
+      <a-entity camera look-controls position="0 1 5" wasd-controls></a-entity>
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
