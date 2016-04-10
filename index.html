@@ -5,7 +5,8 @@
     <title>Respecular</title>
     <script src="http://localhost:9000/dist/aframe.js"></script>
     <script src="assets/components/json-model.js"></script>
-    <script src="assets/shaders/skin.js"></script>
+    <script src="assets/shaders/skin-material/ShaderSkin.js"></script>
+    <script src="assets/shaders/skin-material/skin.js"></script>
   </head>
   <body>
     <a-scene stats>
@@ -14,7 +15,8 @@
                       src="assets/models/leeperrysmith/LeePerrySmith.js"></a-asset-item>
       </a-assets>
 
-      <a-entity json-model="#leeperrysmith-json" material="shader: skin"></a-obj-model>
+      <a-entity json-model="#leeperrysmith-json"
+                material="shader: skin"></a-obj-model>
     </a-scene>
   </body>
 </html>
